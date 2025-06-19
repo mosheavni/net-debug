@@ -1,5 +1,4 @@
 # GitHub Workflow to handle versioning, build, and push Docker images
-
 name: Publish Versioned Docker Image
 
 on:
