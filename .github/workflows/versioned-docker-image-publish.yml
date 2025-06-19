@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   version-build-and-push:
@@ -52,5 +52,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add VERSION
           git commit -m "Incremented version to $NEW_VERSION"
-          git push origin main
-
+          git push origin master
