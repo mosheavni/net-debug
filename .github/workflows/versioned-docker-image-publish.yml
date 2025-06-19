@@ -10,7 +10,8 @@ on:
 jobs:
   version-build-and-push:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -52,5 +53,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add VERSION
-          git commit -m "Incremented version to $NEW_VERSION"
+          git commit -m "[skip ci] Incremented version to $NEW_VERSION"
           git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" master
